@@ -100,18 +100,16 @@ class YyTest(_PluginBase):
         title = event.event_data.get("title")
         if not title:
             return
-        # 收到事件后需要立码返回，避免主程序等待
         if not self._enabled:
             eventmanager.send_event(EventType.NameRecognizeResult, {"title": title})
             return
-        # 调用ChatGPT
         eventmanager.send_event(
             EventType.NameRecognizeResult,
             {
                 "title": title,
-                "name": "test",
-                "year": 2024,
-                "season": 1,
+                "name": "1LDK＋JK 突然间展开同居？极度贴近！？初体验！！？ ",
+                "year": 2023,
+                "season": None,
                 "episode": None,
             },
         )
