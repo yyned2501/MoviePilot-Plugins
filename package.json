@@ -1,11 +1,11 @@
 {
-    "AutoSignIn": {
-        "name": "站点自动签到",
-        "description": "自动模拟登录站点、签到。",
-        "version": "1.1",
-        "icon": "signin.png",
+    "Test": {
+        "name": "test",
+        "description": "测试插件",
+        "version": "1.0",
+        "icon": "chatgpt.png",
         "color": "#4179F4",
-        "author": "thsrite",
-        "level": 2
+        "author": "yyned2501",
+        "level": 1
     }
 }
