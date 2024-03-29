@@ -19,7 +19,7 @@ class YyTest(_PluginBase):
     # 主题色
     plugin_color = "#74AA9C"
     # 插件版本
-    plugin_version = "1.4"
+    plugin_version = "1.5"
     # 插件作者
     plugin_author = "yyned2501"
     # 作者主页
