@@ -1,8 +1,8 @@
 {
     "Test": {
-        "name": "test",
+        "name": "Test",
         "description": "测试插件",
-        "version": "1.0",
+        "version": "1.1",
         "icon": "chatgpt.png",
         "color": "#4179F4",
         "author": "yyned2501",
