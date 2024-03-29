@@ -102,6 +102,7 @@ class YyTest(_PluginBase):
         if not self._enabled:
             eventmanager.send_event(EventType.NameRecognizeResult, {"title": title})
             return
+        logger.info("识别到")
         eventmanager.send_event(
             EventType.NameRecognizeResult,
             {
