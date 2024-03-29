@@ -44,8 +44,6 @@ class test(_PluginBase):
             self._recognize = config.get("recognize")
             self._openai_url = config.get("openai_url")
             self._openai_key = config.get("openai_key")
-            self.openai = OpenAi(api_key=self._openai_key, api_url=self._openai_url,
-                                 proxy=settings.PROXY if self._proxy else None)
 
     def get_state(self) -> bool:
         return self._enabled
@@ -118,52 +116,12 @@ class test(_PluginBase):
                             }
                         ]
                     },
-                    {
-                        'component': 'VRow',
-                        'content': [
-                            {
-                                'component': 'VCol',
-                                'props': {
-                                    'cols': 12,
-                                    'md': 6
-                                },
-                                'content': [
-                                    {
-                                        'component': 'VTextField',
-                                        'props': {
-                                            'model': 'openai_url',
-                                            'label': 'OpenAI API Url',
-                                            'placeholder': 'https://api.openai.com',
-                                        }
-                                    }
-                                ]
-                            },
-                            {
-                                'component': 'VCol',
-                                'props': {
-                                    'cols': 12,
-                                    'md': 6
-                                },
-                                'content': [
-                                    {
-                                        'component': 'VTextField',
-                                        'props': {
-                                            'model': 'openai_key',
-                                            'label': 'sk-xxx'
-                                        }
-                                    }
-                                ]
-                            }
-                        ]
-                    },
                 ]
             }
         ], {
             "enabled": False,
             "proxy": False,
             "recognize": False,
-            "openai_url": "https://api.openai.com",
-            "openai_key": ""
         }
 
     def get_page(self) -> List[dict]:
