@@ -89,7 +89,6 @@ class YyTest(_PluginBase):
     def get_page(self) -> List[dict]:
         pass
 
-
     @eventmanager.register(EventType.NameRecognize)
     def recognize(self, event: Event):
         """
@@ -111,9 +110,9 @@ class YyTest(_PluginBase):
                 "year": 2023,
                 "season": None,
                 "episode": None,
+                "tmdbid": 228367,
             },
         )
-
 
     def stop_service(self):
         """
