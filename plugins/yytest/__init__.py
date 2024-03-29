@@ -19,7 +19,7 @@ class YyTest(_PluginBase):
     # 主题色
     plugin_color = "#74AA9C"
     # 插件版本
-    plugin_version = "1.3"
+    plugin_version = "1.4"
     # 插件作者
     plugin_author = "yyned2501"
     # 作者主页
@@ -89,39 +89,6 @@ class YyTest(_PluginBase):
     def get_page(self) -> List[dict]:
         pass
 
-    def search_movies(self, title: str, year: str) -> List[dict]:
-        """
-        查询模糊匹配的所有电影TMDB信息
-        """
-        if not title:
-            return []
-        ret_infos = []
-        if year:
-            movies = self.search.movies(term=title, year=year, adult=True) or []
-        else:
-            movies = self.search.movies(term=title, adult=True) or []
-        for movie in movies:
-            if title in movie.get("title"):
-                movie["media_type"] = MediaType.MOVIE
-                ret_infos.append(movie)
-        return ret_infos
-
-    def search_tvs(self, title: str, year: str) -> List[dict]:
-        """
-        查询模糊匹配的所有电视剧TMDB信息
-        """
-        if not title:
-            return []
-        ret_infos = []
-        if year:
-            tvs = self.search.tv_shows(term=title, release_year=year, adult=True) or []
-        else:
-            tvs = self.search.tv_shows(term=title, adult=True) or []
-        for tv in tvs:
-            if title in tv.get("name"):
-                tv["media_type"] = MediaType.TV
-                ret_infos.append(tv)
-        return ret_infos
 
     @eventmanager.register(EventType.NameRecognize)
     def recognize(self, event: Event):
@@ -138,30 +105,16 @@ class YyTest(_PluginBase):
             eventmanager.send_event(EventType.NameRecognizeResult, {"title": title})
             return
         # 调用ChatGPT
-        movie = self.search_movies(title)
-        tv = self.search_tvs(title)
-        if len(movie)>0:
-            eventmanager.send_event(
-                EventType.NameRecognizeResult,
-                {
-                    "title": title,
-                    "name": movie[0].get("title"),
-                    "year": movie[0].get("year"),
-                    "season": movie[0].get("season"),
-                    "episode": movie[0].get("episode"),
-                },
-            )
-        elif len(movie)>0:
-            eventmanager.send_event(
-                EventType.NameRecognizeResult,
-                {
-                    "title": title,
-                    "name": tv[0].get("title"),
-                    "year": tv[0].get("year"),
-                    "season": tv[0].get("season"),
-                    "episode": tv[0].get("episode"),
-                },
-            )
+        eventmanager.send_event(
+            EventType.NameRecognizeResult,
+            {
+                "title": title,
+                "name": "test",
+                "year": 2024,
+                "season": 1,
+                "episode": None,
+            },
+        )
 
 
     def stop_service(self):
