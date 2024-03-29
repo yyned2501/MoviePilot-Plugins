@@ -12,7 +12,7 @@ class test(_PluginBase):
     # 插件名称
     plugin_name = "Test"
     # 插件描述
-    plugin_desc = "消息交互支持与ChatGPT对话。"
+    plugin_desc = "测试插件"
     # 插件图标
     plugin_icon = "chatgpt.png"
     # 主题色
@@ -20,11 +20,11 @@ class test(_PluginBase):
     # 插件版本
     plugin_version = "1.0"
     # 插件作者
-    plugin_author = "jxxghp"
+    plugin_author = "yyned2501"
     # 作者主页
     author_url = "https://github.com/jxxghp"
     # 插件配置项ID前缀
-    plugin_config_prefix = "chatgpt_"
+    plugin_config_prefix = "yytest_"
     # 加载顺序
     plugin_order = 15
     # 可使用的用户级别
