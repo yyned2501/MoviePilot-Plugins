@@ -1,6 +1,6 @@
 {
-    "Test": {
-        "name": "Test",
+    "YyTest": {
+        "name": "我的测试插件",
         "description": "测试插件",
         "version": "1.2",
         "icon": "chatgpt.png",

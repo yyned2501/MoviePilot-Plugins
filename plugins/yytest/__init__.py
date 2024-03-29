@@ -7,9 +7,9 @@ from app.plugins import _PluginBase
 from app.schemas.types import EventType
 
 
-class test(_PluginBase):
+class YyTest(_PluginBase):
     # 插件名称
-    plugin_name = "Test"
+    plugin_name = "我的测试插件"
     # 插件描述
     plugin_desc = "测试插件"
     # 插件图标
